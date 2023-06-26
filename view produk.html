@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta charset="utf-8" />
+    <title> </title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/c087ec3e0f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .form-control{
+        border-radius: 30px;
+        border-color: #54defd;
+      }
+
+      .from {
+        width: 430px;
+      }
+      @media screen and (max-width: 991px) {
+        .from {
+          width: 100%;
+        }
+      }
+      .btn {
+        border-radius: 40px;
+      }
+      .navbar {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+      }
+    </style>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+
+      /* xl screen */
+      @media screen and (min-width:1367px) {
+        .atas {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 20px;
+      }
+
+      .gambar {
+        width: auto;
+        height: auto;
+      }
+
+      .qrcode {
+        padding: 50px 10px 20px 10px;
+        width: 140px;
+        margin-left: 150px;
+      }
+      .qrcode p .link-dark{
+        font-size: 17px;
+      }
+
+      .details {
+        width: 500px;
+        padding-left: 20px;
+      }
+
+      .judul{
+        font-size: 21px;
+      }
+      .detil{
+        font-size: 20px;
+      }
+
+      .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 35px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 20px;
+      }
+      .link{
+        font-size: 14px;
+      }
+      }
+
+      /* lg screen */
+      @media screen and (min-width:1141px) and (max-width:1366px) {
+        .atas{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin:0px;
+      }
+
+      .gambar {
+        width: 380px;
+      }
+
+      .qrcode {
+        width: 140px;
+        margin-left: 150px;
+        justify-self: right;
+      }
+      .qrcode .caps{
+        font-size: 17px;
+      }
+
+      .details {
+        width: 400px;
+        margin-left: 10px;
+      }
+
+      .judul{
+        font-size: 18px;
+      }
+      .detil{
+        font-size: 17px;
+      }
+
+      .rate {
+        float: left;
+        height: 46px;
+        padding: 0 10px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 17px;
+      }
+      
+      .desk p{
+        font-size: 17px;
+      }
+
+      .link{
+        font-size: 17px;
+      }
+      }
+
+      /* inspect 1 screen */
+      @media screen and (min-width:992px) and (max-width:1140px) {
+        .atas{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin:0px;
+      }
+
+      .gambar {
+        width: 320px;
+      }
+
+      .qrcode {
+        width: 140px;
+        justify-self: right;
+      }
+      .qrcode .caps{
+        font-size: 14px;
+      }
+
+      .details {
+        width: 400px;
+        margin-left: 8px;
+      }
+
+      .judul h2{
+        font-size: 22px;
+      }
+      .detil{
+        font-size: 13px;
+      }
+
+      .rate {
+        float: left;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 25px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 22px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 12px;
+      }
+      
+      .desk p{
+        font-size: 14px;
+      }
+      .link{
+        font-size: 14px;
+      }
+      }
+
+      /* inspect 2 screen */
+      @media screen and (min-width:768px) and (max-width:991px) {
+        .atas{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin:0px;
+      }
+
+      .gambar {
+        width: 280px;
+      }
+
+      .qrcode {
+        width: 110px;
+        margin-top: 10px;
+        justify-self: right;
+      }
+      .qrcode p{
+        font-size: 10px;
+      }
+
+      .details {
+        width: 400px;
+        margin-left: 16px;
+      }
+
+      .judul h2{
+        font-size: 21px;
+      }
+      .detil{
+        font-size: 12px;
+      }
+
+      .rate {
+        float: left;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 25px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 20px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 12px;
+      }
+      
+      .desk p{
+        font-size: 13px;
+      }
+      .link{
+        font-size: 13px;
+      }
+      }
+
+      /* inspect 3 screen */
+      @media screen and (min-width:576px) and (max-width:767px) {
+        .atas{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin:0px;
+      }
+
+      .gambar {
+        width: 250px;
+      }
+
+      .qrcode {
+        width: 50px;
+        justify-self: right;
+      }
+      .qrcode p{
+        font-size: 10px;
+      }
+
+      .details {
+        width: 260px;
+        margin-left: 5px;
+      }
+
+      .judul h2{
+        font-size: 19px;
+      }
+      .detil{
+        font-size: 11px;
+      }
+
+      .rate {
+        float: left;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 24px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 19px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 12px;
+      }
+      
+      .desk p{
+        font-size: 13px;
+      }
+      .link{
+        font-size: 13px;
+      }
+      }
+
+      /* ini adalah inspect mobile */
+      @media screen and (max-width:575px) {
+        .atas{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+        margin:0px;
+      }
+
+      .gambar {
+        width: 200px;
+      }
+
+      .qrcode {
+        width: 100px;
+        padding: 20px 10px 20px 10px;
+        justify-self: right;
+      }
+      .qrcode p{
+        font-size: 10px;
+      }
+
+      .details {
+        width: 260px;
+        margin-top: 15px;
+      }
+
+      .judul h2{
+        font-size: 19px;
+      }
+      .detil{
+        font-size: 11px;
+      }
+
+      .rate {
+        float: left;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 24px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 19px;
+        color: #ccc;
+      }
+      .vote{
+        font-size: 11px;
+      }
+      
+      .desk p{
+        font-size: 13px;
+      }
+      .link{
+        font-size: 13px;
+      }
+      }
+
+      .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+      }
+
+      .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        color: #ccc;
+      }
+
+      .rate:not(:checked) > label:before {
+        content: "★ ";
+      }
+      .rate > input:checked ~ label {
+        color: #ffc700;
+      }
+      .rate:not(:checked) > label:hover,
+      .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+      }
+      .rate > input:checked + label:hover,
+      .rate > input:checked + label:hover ~ label,
+      .rate > input:checked ~ label:hover,
+      .rate > input:checked ~ label:hover ~ label,
+      .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+      }
+      .link-dark:hover {
+        color: #00bd9d;
+      }
+
+      /* ini adalah css untuk modal tambah ulasan */
+      .modal-body .form-control{
+        border: none;
+      }
+      .modal-body .form-control:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+      .modal-footer .btn{
+        border: none;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #f9f9ff;
+      font-family: 'Poppins', Montserrat, sans-serif;
+    "
+  >
+    <!--  ini adalah navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">
+          <img
+            src="img/Rectangle 30.svg"
+            alt=""
+            width="110"
+            height="45"
+            class="d-inline-block"
+          />
+          <!--   omah <strong>produk</strong> -->
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <form
+            action="produk.html"
+            class="from d-flex ms-auto my-4 my-lg-2 w-text-center w-sm-10"
+          >
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari Produk"
+              aria-label="Search"
+            />
+            <button class="btn" style="background-color: #54defd" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link me-1" href="contact.html"
+                ><strong>Contact</strong></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-1" href="about.html"
+                ><strong>About</strong></a
+              >
+            </li>
+            <li class="nav-item">
+              <form action="login.html">
+                <button
+                  type="submit"
+                  class="btn btn-success me-3 px-3"
+                  style="border-radius: 30px; margin-left: 30px"
+                >
+                  <strong>Login</strong>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ini adalah isi -->
+    <div class="container-fluid my-4">
+      <div class="container">
+        <!-- d-flex justify-content-center align-items-center h-100 my-4 -->
+        <div class="atas">
+          <div class="gambar">
+            <div class="img-produk">
+              <img src="img/contoh produk.png" alt="" class="img-fluid" />
+            </div>
+          </div>
+
+          <div
+            class="details"
+            style="color: #34364a">
+            <div class="judul">
+              <h2 style="font-weight: 700">madu murni bermadji</h2>
+            </div>
+            <div class="detil my-4 ms-3" style="font-weight: 600;">
+              <p>Alamat : </p>
+              <p>Pendiri : </p>
+              <p>Berdiri sejak: </p>
+              <p>Kategori : </p>
+              <p>Situs web : </p>
+              <p>Sosial media : </p>
+            </div>
+          
+
+            <!-- ini adalah ratings -->
+            <div class="rate">
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label for="star5" title="text">5 stars</label>
+
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label for="star4" title="text">4 stars</label>
+
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label for="star3" title="text">3 stars</label>
+
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label for="star2" title="text">2 stars</label>
+
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label for="star1" title="text">1 star</label>
+              <br />
+              <h6 class="vote" style="padding-left: 5px; font-weight: 600">
+                5.0 | 15k vote
+              </h6>
+            </div>
+          </div>
+
+          <!-- ini adalah qrCode -->
+          <div class="qrcode text-center">
+            <img src="img/qrcode.png" alt="" class="img-fluid" />
+            <p class="caps">
+              <i class="fa-solid fa-share-nodes me-1"></i>
+              <a
+                href="#"
+                class="link-dark"
+                style="text-decoration: none; font-weight: 600;"
+                >Share
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <hr class="style1 my-4" />
+
+        <!-- ini adalah deskripsi produk -->
+        <div class="desk col-12">
+          <p style="font-weight: 400; font-size: 20">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            consequatur expedita incidunt eaque nisi iusto voluptatem velit,
+            corporis nostrum aliquam repudiandae delectus exercitationem iure
+            quam sapiente voluptate perferendis similique totam veniam
+            consequuntur obcaecati? Culpa quaerat neque nam pariatur
+            necessitatibus, ex quam iusto, hic cumque id aut. Qui consectetur
+            maxime at explicabo veritatis minima! Eos error placeat, ex
+            consequatur veritatis deleniti! Blanditiis ducimus, quo molestiae
+            mollitia obcaecati quibusdam doloremque quod nihil. <br />
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+            ab labore delectus eos est. Ex provident expedita vel necessitatibus
+            dicta sint, facilis, corrupti, amet quod eos sunt! Similique dicta
+            iste atque blanditiis vitae et earum excepturi illo, odio animi sit,
+            tempore voluptate rem id sapiente consectetur provident odit
+            adipisci doloribus. Repellendus dolores tempora quos iusto facilis
+            ipsam porro dolorem! Corrupti commodi modi nemo cumque quia quidem
+            vero voluptatem id incidunt?<br />
+            <br />Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+            ipsa provident odit adipisci magnam iste porro, eaque ipsam
+            laudantium autem voluptatibus ducimus aliquam incidunt nisi eos quas
+            quo in voluptatum maxime nobis laborum consectetur neque. Adipisci
+            rem, a fugit obcaecati cupiditate vitae exercitationem, laudantium
+            animi accusamus corporis beatae aliquam aliquid facilis corrupti
+            ipsum harum non tempora enim dicta sunt iste. Cupiditate iusto
+            facilis, ratione aliquam blanditiis velit voluptatum inventore? Ea.
+            <br />
+            <br />Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Aliquam voluptatem explicabo soluta sapiente ipsam, tempore eligendi
+            quis magni at temporibus quas quisquam. Labore tenetur modi facilis
+            provident magnam. Recusandae eos eligendi modi dignissimos velit,
+            vel hic dolorem eum quidem error. Aspernatur molestiae autem
+            accusantium adipisci recusandae est quo rem error ratione
+            laboriosam! Laborum sint at aut inventore rerum perferendis, in
+            ipsum perspiciatis, voluptas hic incidunt iure doloribus provident,
+            necessitatibus voluptatem?<br />
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Incidunt minima expedita atque iusto mollitia assumenda non deserunt
+            ipsam libero nobis. Incidunt ullam perspiciatis quas debitis
+            suscipit sed expedita rerum non et dolor sunt eum itaque, vitae ipsa
+            vero ipsam sapiente error fugiat praesentium nisi? Quo culpa
+            similique vitae, corrupti hic maxime blanditiis non, temporibus,
+            harum reiciendis adipisci est veritatis praesentium. Amet nulla
+            atque aliquid dolore ipsam magni suscipit, delectus recusandae.
+            <br />
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+            expedita porro harum a aliquam illum cumque est! Sit fugiat harum
+            eos perspiciatis deserunt explicabo hic dicta debitis distinctio
+            expedita quasi, sed quae facere autem corrupti. Et harum dolores
+            quia, omnis totam fugiat aperiam ad corporis dolorem nisi ex at
+            accusamus nulla quae! Quis, ea ullam ut veritatis culpa corrupti non
+            dolore iure rerum laborum necessitatibus nemo aliquid esse doloribus
+            suscipit?
+          </p>
+
+
+          <p class="tmbh my-4">
+            
+            <!-- ini adalah link menambahkan ulasan produk
+            dengan modal -->
+            <div class="link">
+              <i class="fa-solid fa-pen me-1"></i>
+            <a
+              href="#"
+              class="link-dark"
+              style="text-decoration: none; font-weight: 600;"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              >ingin menambahkan ulasan produk?
+            </a>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content" style="border-radius: 15px;">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Menambahkan ulasan produk <i class="fa-solid fa-pen me-1"></i> </h5>
+                  </div>
+                  <div class="modal-body">
+                    <form action="#">
+                      <div class="mb-3">
+                        <textarea class="form-control" id="message-text" rows="8" placeholder="Ketuk untuk menambah ulasan"></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <form action="#">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">kembali <i class="fa-solid fa-xmark"></i></button>
+                    <button type="button" class="btn btn-primary" >kirim <i class="fas fa-long-arrow-alt-right ms-1"></i>
+                    </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </p>
+        </div>
+        <hr class="style1 my-4" />
+
+        <!-- ini adalah komentar -->
+        <div class="container my-2 py-2 text-dark">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-10 col-xl-12">
+              <div class="d-flex flex-start w-100">
+                <img
+                  class="rounded-circle shadow-1-strong me-3"
+                  src="img/user icon.png"
+                  alt="avatar"
+                  width="65"
+                  height="65"
+                />
+                <div class="w-100">
+                  <h5>Add a comment</h5>
+                  <div class="form-outline">
+                    <textarea
+                      class="form-control"
+                      id="textAreaExample"
+                      rows="4"
+                      style="border-radius: 20px"
+                      placeholder="What is your view?"
+                    ></textarea>
+                  </div>
+                  <div class="d-flex justify-content-between mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      style="border-radius: 20px"
+                    >
+                      Send <i class="fas fa-long-arrow-alt-right ms-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ini adalah footer -->
+    <footer class="text-center text-lg-start" style="background-color: #e7e7e7">
+      <!-- Copyright -->
+      <div
+        class="text-center p-3 text-light"
+        style="background-color: rgba(0, 0, 0, 0.2); font-weight: 600"
+      >
+        © 2022 Copyright:
+        <a class="text-dark" href="#">omah-produk.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
